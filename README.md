@@ -10,6 +10,6 @@ Written in python and built with [pyinstaller](http://www.pyinstaller.org/).
 
 ## How to use it
 
-Download the [exe file](https://github.com/aborruso/SpotlightImagesRevealed/releases/download/v0.1/slr.exe), run it and wait until the window is closed. Than you will have the images in `C:\Users\[username]\Pictures\SpotlightImagesRevealed` folder.
+Download the [**exe file**](https://github.com/aborruso/SpotlightImagesRevealed/releases/download/v0.1/slr.exe), run it and wait until the window is closed. Than you will have the images in `C:\Users\[username]\Pictures\SpotlightImagesRevealed` folder.
 
 ![](./resources/SpotlightImagesRevealed.png)

@@ -1,0 +1,4 @@
+slr.spec
+.ipynb_checkpoints/*
+build/*
+__pycache__/*

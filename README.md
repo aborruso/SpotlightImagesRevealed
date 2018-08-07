@@ -4,7 +4,7 @@
 
 **Spotlight Images Revealed** is Windows 10 utility that collects these images and insert them in the folder `SpotlightImagesRevealed`, inside the user "Pictures" folder.
 
-Written in python and built with [pyinstaller](http://www.pyinstaller.org/) (`pyinstaller --onefile <your_script_name>.py`).
+Written in python and built with [pyinstaller](http://www.pyinstaller.org/) (`pyinstaller --onefile slr.py`).
 
 **NOTE**: I have no idea about the images license. I think that all the rights are reserverd to Microsoft.
 

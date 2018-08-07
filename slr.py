@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[104]:
+# In[6]:
 
 import getpass
 import os
@@ -9,23 +9,30 @@ import imghdr
 from PIL import Image
 import shutil
 from distutils.dir_util import copy_tree
+from pathlib import Path
 
 
-# In[105]:
+# In[7]:
+
+# get the user home folder
+home = str(Path.home())
+
+
+# In[8]:
 
 # get the username
 uname=getpass.getuser()
 
 
-# In[106]:
+# In[9]:
 
 # get the spotlight folder 
 slPathpart="AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\\LocalState\\Assets"
-slPath=os.path.join('C:\\Users', uname, slPathpart)
+slPath=os.path.join(home, slPathpart)
 os.chdir(slPath)
 
 
-# In[107]:
+# In[10]:
 
 # create the SpotlightImagesRevealed user folder and the temp subfolder
 slPathUser=os.path.join('C:\\Users', uname, 'Pictures\\SpotlightImagesRevealed')
@@ -36,7 +43,7 @@ if not os.path.exists(tempFolder):
     os.makedirs(tempFolder)
 
 
-# In[108]:
+# In[11]:
 
 # delete all files in SpotLightRevealed temp folder
 for the_file in os.listdir(tempFolder):
@@ -48,7 +55,7 @@ for the_file in os.listdir(tempFolder):
         print(e)
 
 
-# In[109]:
+# In[12]:
 
 # the list of source files
 slrlistS = []
@@ -57,7 +64,7 @@ for root, dirs, files in os.walk(slPath):
         slrlistS.append(file)
 
 
-# In[110]:
+# In[13]:
 
 # the list of destination files
 slrlistD = []
@@ -67,20 +74,20 @@ for root, dirs, files in os.walk(slPathUser):
 slrlistD = [ext.replace('.jpeg', '') for ext in slrlistD]
 
 
-# In[111]:
+# In[14]:
 
 # the files to copy from source folder, only those that are not already in destination
 filesToCopy=list(set(slrlistS) - set(slrlistD))
 
 
-# In[112]:
+# In[15]:
 
 # copy the files from source to destination
 for i in filesToCopy:
     shutil.copy2(os.path.join('C:\\Users', uname, slPathpart,i), tempFolder)
 
 
-# In[113]:
+# In[16]:
 
 # delete all files that are not jpeg
 for root, _, files in os.walk(tempFolder):
@@ -94,7 +101,7 @@ for root, _, files in os.walk(tempFolder):
             print("Error " + fullpath)
 
 
-# In[114]:
+# In[17]:
 
 # add the right extension to files
 for root, _, files in os.walk(tempFolder):
@@ -109,7 +116,7 @@ for root, _, files in os.walk(tempFolder):
             print("Error " + fullpath)
 
 
-# In[115]:
+# In[18]:
 
 # remove the images that have a portrait ratio or a widht lower than 1920px
 for root, _, files in os.walk(tempFolder):
@@ -126,7 +133,7 @@ for root, _, files in os.walk(tempFolder):
                 print("Error " + fullpath)
 
 
-# In[116]:
+# In[19]:
 
 # copy all files from SpotLight temp user folder to SpotlightImagesRevealed one
 fromDirectory = tempFolder
@@ -134,7 +141,7 @@ toDirectory = slPathUser
 copy_tree(fromDirectory, toDirectory)
 
 
-# In[117]:
+# In[20]:
 
 # remove the temp SpotlightImagesRevealed folder
 try:

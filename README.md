@@ -2,7 +2,7 @@
 
 "Windows 10 is keeping your lock screen sexy with its curated, personalized slideshow of images in Windows Spotlight" ([here an old how-to](https://www.windowscentral.com/how-enable-windows-spotlight)). But where are these images and how to use them?
 
-**Spotlight Images Revealed** is Windows 10 utility that collects these images and insert them in the folder `SpotlightImagesRevealed`, inside the user "Pictures" folder.
+**Spotlight Images Revealed** is a Windows 10 utility that collects these images and insert them in the folder `SpotlightImagesRevealed`, inside the user "Pictures" folder.
 
 Written in python and built with [pyinstaller](http://www.pyinstaller.org/) (`pyinstaller --onefile slr.py`).
 
